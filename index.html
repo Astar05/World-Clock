@@ -3,52 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link ref="stylesheet" href="src/style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.37/moment-timezone-with-data-1970-2030.min.js"></script>
-    <title>Time zone dropdown</title>
+    <title>World Clock Project</title>
   </head>
   <body>
-    <label for="cities"
-      >Which of the 3 Cities would you like to see their Time Zone</label
-    >
-    <select name="cities" id="cities">
-      <option value="">Select a city</option>
-      <option value="paris">Paris 🇫🇷</option>
-      <option value="tokyo">Tokyo 🇯🇵</option>
-      <option value="sydney">Sydney 🇦🇺</option>
-      <option value="hongkong">Hong Kong</option>
-    </select>
-    <script>
-      function showTimeZone(event) {
-        let parisZone = moment()
-          .tz("Europe/Paris")
-          .format("dddd, MMMM D, YYYY h:m A");
-        let tokyoZone = moment()
-          .tz("Asia/Tokyo")
-          .format("dddd, MMMM D, YYYY h:m A");
-        let sydneyZone = moment()
-          .tz("Australia/Sydney")
-          .format("dddd, MMMM D, YYYY h:m A");
-        let hkZone = moment().tz("Hongkong").format("dddd, MMMM D, YYYY h:m A");
+    <h1>World Clock</h1>
 
-        if (event.target.value.length > 0) {
-          if (event.target.value === "paris") {
-            alert(`It is ${parisZone} in Europe/Paris`);
-          }
-          if (event.target.value === "tokyo") {
-            alert(`It is ${tokyoZone} in Asia/Tokyo`);
-          }
-          if (event.target.value === "sydney") {
-            alert(`It is ${sydneyZone} in Australia/Sydney`);
-          }
-          if (event.target.value === "hongkong") {
-            alert(`It is ${hkZone} in Hong Kong`);
-          }
-        }
-      }
-
-      let cities = document.querySelector("#cities");
-      cities.addEventListener("change", showTimeZone);
-    </script>
+    <footer>
+      Project Coded by Nhu Huynh - Open-Sourced on
+      <a href="#" target="_blank">GitHub</a>
+    </footer>
+    <script src="src/index.js"></script>
   </body>
 </html>
