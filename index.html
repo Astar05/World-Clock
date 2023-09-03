@@ -16,6 +16,7 @@
       <option value="paris">Paris 🇫🇷</option>
       <option value="tokyo">Tokyo 🇯🇵</option>
       <option value="sydney">Sydney 🇦🇺</option>
+      <option value="hongkong">Hong Kong</option>
     </select>
     <script>
       function showTimeZone(event) {
@@ -28,6 +29,7 @@
         let sydneyZone = moment()
           .tz("Australia/Sydney")
           .format("dddd, MMMM D, YYYY h:m A");
+        let hkZone = moment().tz("Hongkong").format("dddd, MMMM D, YYYY h:m A");
 
         if (event.target.value.length > 0) {
           if (event.target.value === "paris") {
@@ -38,6 +40,9 @@
           }
           if (event.target.value === "sydney") {
             alert(`It is ${sydneyZone} in Australia/Sydney`);
+          }
+          if (event.target.value === "hongkong") {
+            alert(`It is ${hkZone} in Hong Kong`);
           }
         }
       }
