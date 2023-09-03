@@ -15,19 +15,19 @@
       <option value="">Select a city</option>
       <option value="paris">Paris 🇫🇷</option>
       <option value="tokyo">Tokyo 🇯🇵</option>
-      <option value="sydney">Sydney 🇦🇺 🇯🇵</option>
+      <option value="sydney">Sydney 🇦🇺</option>
     </select>
     <script>
       function showTimeZone(event) {
         let parisZone = moment()
           .tz("Europe/Paris")
-          .format("dddd, MMMM D, YYYY HH:mm A");
+          .format("dddd, MMMM D, YYYY h:m A");
         let tokyoZone = moment()
           .tz("Asia/Tokyo")
-          .format("dddd, MMMM D, YYYY HH:mm A");
+          .format("dddd, MMMM D, YYYY h:m A");
         let sydneyZone = moment()
           .tz("Australia/Sydney")
-          .format("dddd, MMMM D, YYYY HH:mm A");
+          .format("dddd, MMMM D, YYYY h:m A");
 
         if (event.target.value.length > 0) {
           if (event.target.value === "paris") {
