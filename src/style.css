@@ -1,7 +1,74 @@
+body {
+  background-color: beige;
+  font-family: sans-serif;
+}
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: salmon;
+  padding: 30px;
+  box-shadow: 10px 5px 10px 5px rgba(0, 0, 0, 0.4);
+}
+
+.city {
+  display: flex;
+  margin: 15px 0;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px dashed grey;
+}
+
+.current {
+  text-align: center;
+}
+.current-city {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+
+.chosen-city {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+
+.city:last-child {
+  border: none;
+}
+.time {
+  font-size: 47px;
+  font-weight: bold;
+}
+
+.time small {
+  font-size: 24px;
+  vertical-align: middle;
+  line-height: 36px;
+}
+
+.date {
+  opacity: 0.7;
+}
 h1 {
   text-align: center;
+  font-family: sans-serif;
+  font-size: 40px;
+}
+
+h2 {
+  margin: 0 0 5px;
+  font-size: 28px;
 }
 
 footer {
   text-align: center;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+select {
+  display: block;
+  width: 100%;
+  border-radius: 4px;
+  padding: 10px;
 }
