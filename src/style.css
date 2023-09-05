@@ -50,7 +50,7 @@ body {
   justify-content: space-between;
   padding: 10px 0;
   line-height: 25px;
-  width: 100%;
+  width: 99.9%;
 }
 
 .city:last-child {
