@@ -41,14 +41,13 @@ body {
 .current-city {
   display: flex;
   justify-content: space-between;
-  padding: 5px 0;
   line-height: 25px;
 }
 
 .chosen-city {
   display: flex;
   justify-content: space-between;
-  padding: 20px 0;
+  padding: 10px 0;
   line-height: 25px;
 }
 
