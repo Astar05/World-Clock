@@ -42,6 +42,7 @@ body {
   display: flex;
   justify-content: space-between;
   line-height: 25px;
+  width: 100%;
 }
 
 .chosen-city {
@@ -49,6 +50,7 @@ body {
   justify-content: space-between;
   padding: 10px 0;
   line-height: 25px;
+  width: 100%;
 }
 
 .city:last-child {
