@@ -67,7 +67,7 @@ function updateCity(event) {
 function currentCity() {
   let currentTime = moment();
   let currentName = moment.tz.guess();
-  let currentCity = currentName.split("/")[1].replace("_", " ");
+  let currentCity = currentName.replace("_", " ").split("/")[1];
   let currentElement = document.querySelector(".current-city");
   currentElement.innerHTML = `
     <div class="current-city">
