@@ -64,7 +64,27 @@ function updateCity(event) {
   }
 }
 
+function currentCity() {
+  let currentTime = moment();
+  let currentName = moment.tz.guess();
+  let currentCity = currentName.split("/")[1].replace("_", " ");
+  let currentElement = document.querySelector(".current-city");
+  currentElement.innerHTML = `
+    <div class="current-city">
+      <div>
+        <h2>${currentCity}</h2>
+        <div class="date">${currentTime.format("MMMM Do YYYY")}</div>
+      </div>
+      <div class="time">
+        ${currentTime.format("h:mm:ss")}
+        <small> ${currentTime.format("A")} </small>
+      </div>
+    </div>
+  `;
+}
+
 updateTime();
+currentCity();
 setInterval(updateTime, 1000);
 
 let citiesSelect = document.querySelector("#cities-drop");
