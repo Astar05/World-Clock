@@ -86,6 +86,7 @@ function currentCity() {
 updateTime();
 currentCity();
 setInterval(updateTime, 1000);
+setInterval(currentCity, 1000);
 
 let citiesSelect = document.querySelector("#cities-drop");
 citiesSelect.addEventListener("change", updateCity);
