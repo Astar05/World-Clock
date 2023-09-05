@@ -1,4 +1,4 @@
-setInterval(function () {
+function updateTime() {
   //Boston
   let bostonElement = document.querySelector("#boston");
   let bostonDateElement = bostonElement.querySelector(".date");
@@ -44,4 +44,28 @@ setInterval(function () {
   let hKTime = moment().tz("Asia/Hong_Kong");
   hKDateElement.innerHTML = hKTime.format("MMMM Do YYYY");
   hKTimeElement.innerHTML = hKTime.format("h:mm:ss [<small>]A[</small>]");
-}, 1000);
+}
+
+function updateCity(event) {
+  if (event.target.value.length > 0) {
+    let cityTimeZone = event.target.value;
+    let cityName = cityTimeZone.replace("_", " ").split("/")[1];
+    let cityTime = moment().tz(cityTimeZone);
+    let citiesElement = document.querySelector(".chosen-city");
+    citiesElement.innerHTML = `<div class="chosen-city">
+        <div>
+          <h2>${cityName}</h2>
+          <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
+        </div>
+        <div class="time">${cityTime.format(
+          "h:mm:ss"
+        )}<small> ${cityTime.format("A")} </small></div>
+      </div>`;
+  }
+}
+
+updateTime();
+setInterval(updateTime, 1000);
+
+let citiesSelect = document.querySelector("#cities-drop");
+citiesSelect.addEventListener("change", updateCity);
