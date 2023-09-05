@@ -44,21 +44,32 @@ function updateTime() {
   hKTimeElement.innerHTML = hKTime.format("h:mm:ss [<small>]A[</small>]");
 }
 
+let updatecityInterval;
+
 function updateCity(event) {
+  clearInterval(updatecityInterval);
+
   if (event.target.value.length > 0) {
     let cityTimeZone = event.target.value;
     let cityName = cityTimeZone.replace("_", " ").split("/")[1];
-    let cityTime = moment().tz(cityTimeZone);
-    let citiesElement = document.querySelector(".chosen-city");
-    citiesElement.innerHTML = `<div class="chosen-city">
-        <div>
-          <h2>${cityName}</h2>
-          <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
-        </div>
-        <div class="time">${cityTime.format(
-          "h:mm:ss"
-        )}<small> ${cityTime.format("A")} </small></div>
-      </div>`;
+
+    function updateCityTime() {
+      let cityTime = moment().tz(cityTimeZone);
+      let citiesElement = document.querySelector(".chosen-city");
+      citiesElement.innerHTML = `<div class="chosen-city">
+          <div>
+            <h2>${cityName}</h2>
+            <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
+          </div>
+          <div class="time">${cityTime.format(
+            "h:mm:ss"
+          )}<small> ${cityTime.format("A")} </small></div>
+        </div>`;
+    }
+
+    updateCityTime();
+
+    updatecityInterval = setInterval(updateCityTime, 1000);
   }
 }
 
