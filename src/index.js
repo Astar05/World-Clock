@@ -1,13 +1,11 @@
 function updateTime() {
-  //Boston
-  let bostonElement = document.querySelector("#boston");
-  let bostonDateElement = bostonElement.querySelector(".date");
-  let bostonTimeElement = bostonElement.querySelector(".time");
-  let bostonTime = moment().tz("US/Eastern");
-  bostonDateElement.innerHTML = bostonTime.format("MMMM Do YYYY");
-  bostonTimeElement.innerHTML = bostonTime.format(
-    "h:mm:ss [<small>]A[</small>]"
-  );
+  //Italy
+  let romeElement = document.querySelector("#rome");
+  let romeDateElement = romeElement.querySelector(".date");
+  let romeTimeElement = romeElement.querySelector(".time");
+  let romeTime = moment().tz("Europe/Rome");
+  romeDateElement.innerHTML = romeTime.format("MMMM Do YYYY");
+  romeTimeElement.innerHTML = romeTime.format("h:mm:ss [<small>]A[</small>]");
 
   //Tokyo
   let tokyoElement = document.querySelector("#tokyo");
